@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     return <>
         {options.map(option => (
-            <Button key={option} handleClicks={onLeaveFeedback} text={option} name={option}></Button>
+            <Button key={option} onLeaveFeedback={onLeaveFeedback} text={option} name={option}></Button>
         ))}
     </>
 }

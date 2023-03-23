@@ -15,7 +15,8 @@ const App = () => {
   const options = { good, neutral, bad };
 
   const countTotalFeedback = () => {
-      return good + neutral + bad;
+    const total = good + neutral + bad;
+    return total;
   }
   
   const countPositiveFeedbackPercentage = () => {
@@ -28,7 +29,7 @@ const App = () => {
     }
 
   const onLeaveFeedback = event => {
-    switch (event.target.name) {
+    switch (event.target.dataset.name) {
       case 'good':
         setGood(PrevGood => PrevGood + 1);
         break;
