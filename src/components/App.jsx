@@ -28,8 +28,7 @@ const App = () => {
     }
 
   const onLeaveFeedback = event => {
-    const feedback = event.target.name;
-    switch (feedback) {
+    switch (event.target.name) {
       case 'good':
         setGood(PrevGood => PrevGood + 1);
         break;
@@ -42,6 +41,7 @@ const App = () => {
       default:
         break;
     }
+  }
 
     return (
       <Container>
@@ -56,12 +56,10 @@ const App = () => {
             <Statistics good={good} neutral={neutral} bad={bad} total={countTotalFeedback()} positivePercentage={countPositiveFeedbackPercentage()}></Statistics>
           ) : (
             <Notification message="There is no feedback"></Notification> 
-          ) 
-          }
+          )}
         </Section>
       </Container>
     )
   }
-}
 
 export default App
